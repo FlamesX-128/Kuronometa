@@ -1,0 +1,14 @@
+@mixin newGrid($grid_area, $grid_columns, $grid_rows, $grid_areas)
+  display: grid
+
+  @if $grid_area
+    grid-area: $grid_area
+
+  @if $grid_columns
+    grid-template-columns: $grid_columns
+
+  @if $grid_rows
+    grid-template-rows: $grid_rows
+
+  @if $grid_areas
+    grid-template-areas: $grid_areas

@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+  
+    /* Language and Environment */
+    "target": "es6",                                     
+ 
+    /* Modules */
+    "module": "commonjs",                                
+    "rootDir": "src/",                              
+    "moduleResolution": "node",                       
+    "typeRoots": [
+      "node_modules/@types"
+    ],                             
+    
+    /* Emit */
+    // "declaration": true,                              
+    // "declarationMap": true,                          
+    "sourceMap": true,                               
+    "outDir": "dist/",                                  
+    "removeComments": true,                          
+    // "declarationDir": "@types/",                           
+
+    /* Interop Constraints */
+    "esModuleInterop": true,                             
+    "forceConsistentCasingInFileNames": true,            
+
+    /* Type Checking */
+    "strict": true,                                     
+    "alwaysStrict": true,                             
+
+    /* Completeness */
+    "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
+    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/**/*.ts"
+  ]
+}

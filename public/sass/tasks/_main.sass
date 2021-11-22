@@ -1,0 +1,105 @@
+div#tasks
+  @include newGrid(tasks, 90%, auto, ("header" "taskList"))
+
+  align-items: center
+  justify-content: center
+
+  div#taskHeader
+    @include newGrid(header, 100%, auto, ("title" "newTask"))
+
+    h2
+      grid-area: title
+      text-align: center
+    
+    div#newTask
+      @include newGrid(newTask, 100%, auto, ("task" "button"))
+      font-size: 20px
+
+      div
+        @include newGrid(task, 100%, auto, ("label" "input"))
+
+        label
+          grid-area: label
+
+        input[type=text]
+          grid-area: input
+          background: transparent
+          background-color: transparent
+          border: none
+          border-bottom: 1px solid red
+          margin-bottom: 10px
+
+        input[type=text], input[type=text]:hover, select
+          background: #ffffff20
+          background-color: #ffffff20
+          outline: none
+          border: none
+          border-bottom: 1px solid #00000080
+
+    button
+      @include newButton()
+
+      justify-self: center
+      text-align: center
+
+      background: #ffffff
+      background-color: #ffffff
+
+      border-bottom: solid 4px #e2e1e1
+      box-shadow: 0 1px 4px #000
+      border-radius: 5px
+
+      height: 30px
+      width: 50%
+      animation: buttonOutOfC 0.3s forwards
+      font-size: 20px
+    
+    button:hover
+      background: #e2e1e1
+      background-color: #eeeeee
+      border-bottom: solid 5px #d2d1d1
+      animation: buttonHoverC 0.3s forwards
+
+    @keyframes buttonOutOfC
+      0%
+        height: 35px
+      100%
+        height: 30px
+
+    @keyframes buttonHoverC
+      0%
+        height: 30px
+        width: 50%
+      100%
+        height: 35px
+        width: calc( 50% + 2px )
+
+
+  div#taskList
+    @include newGrid(taskList, 100%, auto, false)
+    margin-top: 20px
+
+    div.task
+      @include newGrid(false, (50px auto 50px), 100%, ("image info button"))
+
+      align-items: center
+      border-bottom: 1px solid #00000080
+      height: 40px
+      margin-bottom: 20px
+
+      i
+        grid-area: image
+      
+      div#task-info
+        grid-area: info
+
+      button
+        grid-area: button
+        @include newButton()
+
+        background: transparent
+        background-color: transparent
+    
+    div.task:hover
+      border: 1px solid #00000080
+      border-radius: 5px

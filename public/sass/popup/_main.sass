@@ -1,0 +1,124 @@
+div#settingsWindow
+  @include newGrid(false, 90%, 90%, "popup")
+
+  animation: closeSettingsWindow 0.3s forwards
+  background: rgba(0, 0, 0, 0.5)
+  background-color: rgba(0, 0, 0, 0.5)
+  height: 100%
+  align-content: center
+  justify-content: center
+  position: fixed
+  visibility: hidden
+  width: 100%
+
+  z-index: 2
+
+  div#popup
+    @include newGrid(popup, 100%, (60px auto), ("header" "content"))
+
+    animation: closePopWindow 0.3s forwards
+    background-color: $secondary-bg-color
+    box-shadow: 0 1px 4px #000
+    border-radius: 5px
+    color: #eee
+    height: 100%
+    overflow: auto
+
+    div#popup-header
+      @include newGrid(header, 100%, auto, false)
+
+      background: $tertiary-bg-color
+      background-color: $tertiary-bg-color
+
+      text-align: center
+      border-bottom: #ffffff25
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.7)
+      z-index: 1
+
+    div#popup-content
+      @include newGrid(content, 100%, auto, "form")
+      overflow: hidden
+
+      form
+        @include newGrid(form, 80%, 360px, false)
+
+        justify-content: center
+
+        div#settingsForm
+          @include newGrid(false, 100%, 70px, false)
+
+          div.formInput
+            @include newGrid(false, (120px auto), 100%, ("label input"))
+
+            border-bottom: solid 1px #ffffff25
+
+            align-items: center
+
+            padding-top: 30px
+
+            label
+              font-size: 24px
+              grid-area: label
+
+            input[type=number]
+              grid-area: input
+
+              background: transparent
+              background-color: transparent
+              border: none
+              color: #eee
+
+            input[type=number], input[type=number]:hover, select
+              background: transparent
+              background-color: transparent
+              outline: none
+              border: none
+              color: #eee
+
+        div#changes
+          @include newGrid(false, 100%, repeat(2, 70px), false)
+
+          padding-top: 30px
+
+          input[type=button], input[type=submit]
+            background: #363636
+            background-color: #363636
+
+            border: none
+            border-bottom: solid 2px #d0d0d0
+            border-radius: 6px
+            box-shadow: 0 1px 4px #000
+            color: #ffffff
+            cursor: pointer
+
+            justify-self: center
+
+            height: 50px
+            width: 100%
+
+@keyframes openPopWindow 
+  0%
+    height: 0%
+
+  100%
+    height: 100%
+
+@keyframes closePopWindow 
+  100%
+    height: 0%
+
+  0%
+    height: 100%
+
+@keyframes openSettingsWindow
+  0%
+    opacity: 0%
+  100%
+    opacity: 100%
+    
+@keyframes closeSettingsWindow
+  100%
+    opacity: 0%
+  0%
+    opacity: 100%
+    

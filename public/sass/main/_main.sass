@@ -1,0 +1,21 @@
+main
+  @include newGrid(main, 90%, auto, "mainContainer")
+
+  background: $secondary-bg-color
+  background-color: $secondary-bg-color
+
+  align-items: center
+  justify-content: center
+
+  div#mainContainer
+    @include newGrid(mainContainer, 100%, (90px 200px 90px), ("timers" "kuronometa" "button"))
+
+    background: $tertiary-bg-color
+    background-color: $tertiary-bg-color
+
+    border-radius: 5px
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5)
+
+    @import timers/main
+    @import kuronometa/main
+    @import button/main

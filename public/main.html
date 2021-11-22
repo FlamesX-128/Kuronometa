@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kuronometa</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body id="mainGrid">
+    <header>
+      <button id="openSettingsWindow">
+        <div>
+          <i class="fas fa-cog fa-2x"></i>
+          <p>Settings</p>
+        </div>
+      </button>
+    </header>
+
+    <main>
+      <div id="mainContainer">
+        <div id="timersButtons"></div>
+
+        <div id="kuronometa">
+          <p id="countdown">00:00</p>
+        </div>
+
+        <div id="buttonContainer">
+          <button id="changeState">Start</button>
+        </div>
+      </div>
+    </main>
+
+    <div id="tasks">
+      <div id="taskHeader">
+        <h2>Add task</h2>
+
+        <div id="newTask">
+            <div>
+              <label for="newTaskName">Task name</label>
+              <input
+                type="text"
+                id="newTaskName"
+                name="newTaskName"
+                placeholder="New task name"
+              />
+            </div>
+
+            <button id="addTask">
+              <i class="fas fa-plus">Add task</i>
+            </button>
+        </div>
+      </div>
+
+      <div id="taskList">
+        <div class="task">
+          <i class="fas fa-tasks fa-lg"></i>
+
+          <p>${task.title}</p>
+
+          <button id="Task#0">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="settingsWindow">
+      <div id="popup">
+        <div id="popup-header">
+          <h2>Settings</h2>
+        </div>
+
+        <div id="popup-content">
+          <form>
+            <div id="settingsForm"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>&copy; FlamesX-128 2021</footer>
+
+    <script src="JS/main.js" type="module"></script>
+  </body>
+</html>

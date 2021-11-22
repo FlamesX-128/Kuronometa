@@ -1,0 +1,7 @@
+@types/
+dist/
+node_modules/
+public/css/
+
+storage.json
+out/

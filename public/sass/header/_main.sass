@@ -1,0 +1,35 @@
+header
+  @include newGrid(header, 100%, 100%, false)
+
+  background: $tertiary-bg-color
+  background-color: $tertiary-bg-color
+
+  border-bottom: solid 1px rgba(0, 0, 0, 0.15)
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7)
+
+  z-index: 1
+
+  button
+    @include newGrid(false, 100%, 100%, "container")
+    @include newButton()
+
+    background: transparent
+    background-color: transparent
+
+    div
+      @include newGrid(container, (45px 80px), 45px, ("image text"))
+
+      border-bottom: #ffffff25
+      color: #eee
+      padding-left: 2px
+
+      text-align: center
+
+      @each $tag, $area in (i image, p text)
+        #{$tag}
+          grid-area: $area
+          align-self: center
+      
+    div:hover
+      background: #ffffff40
+      background-color: #ffffff40
